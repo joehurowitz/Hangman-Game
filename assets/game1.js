@@ -1,11 +1,21 @@
-
-
 var library =
 ["balloon","hangman","saturn", "scorpio"];
 
 var word= "";
 var answerArray = [];
 
+
+document.onkeyup = function(event){
+	var letter = String.fromCharCode(event.keyCode).toLowerCase();
+
+	if (letter === "i"){
+		init();
+	}
+
+	//if (letter === "g"){
+		guessOne();
+	//}
+} //close event
 
 function init(){
 word = library[Math.floor(Math.random()*library.length)];
@@ -16,15 +26,16 @@ for(var i=0;i<word.length;i++){
 	answerArray[i] = "_";
 }
 document.getElementById("answer").innerHTML=answerArray.join(" ");
-document.getElementById("message").innerHTML= "Type a letter then press guess or quit to stop playing"
+document.getElementById("message").innerHTML= "Type a letter then press guess or quit to stop playing";
+
 } //close init()
 
-
 function guessOne(){
-	var guess = document.getElementById("guess").value;
+
+	var guess = event.key;
 	var showThisMessage = "";
 	var lettersAlreadyGuessed =[];
-
+	showThisMessage = "Enter a letter : "
 	if(guess.length !==1){
 		showThisMessage = "Please enter only one letter";
 	}
@@ -34,23 +45,8 @@ function guessOne(){
 				answerArray[i] = guess;
 				showThisMessage = "Yes! " + guess + " is in the answer";
 			}
-
-			// start new code
-			//else if{
-			//	for(var j;j<word.length;i++){
-					
-			//	if(word[i]!==guess){
-			//	lettersAlreadyGuessed[i] = guess;
-			//		}
-			//	}
-			//}
-			// stop new code
 		
 		}
-
-
-
-
 
 	var remaining_letters = answerArray.length;
 	for(var i=0;i<answerArray.length;i++){
@@ -74,7 +70,8 @@ function guessOne(){
 	
 	document.getElementById("answer").innerHTML = answerArray.join(" ");
 	document.getElementById("message").innerHTML = showThisMessage;
-}// guessOne() close
+	} //close guesOne(); 
+
 
 function quit(){
 	if(word.length === answerArray.length){
@@ -84,8 +81,6 @@ function quit(){
 	document.getElementById("message").innerHTML = showThisMessage;
 	
 	}
-
-
 
 
 

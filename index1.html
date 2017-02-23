@@ -3,24 +3,33 @@
  <head>
     <meta charset="UTF-8">
     <title>Hangman</title>
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="assets/style1.css">-->
+    <script type="text/javascript" src="assets/game1.js"></script>
    
 
   </head>
 
-	<body>
+	<body style="background-color: rgba(137, 206, 186, 0.6); ">
 
 
 <input id="guess" type="text">
-<input type="button" value="Start" onClick="init()"/>
-<input type="button" value="Guess" onClick="guessOne()"/>
+
+Press "i" to initialize: 
+<!--<input type="button" value="Initialize" onClick="init()"/>-->
+
+
+
+ <input type="text" onkeyup="guessOne()"/>
 <input type="button" value="Quit" onClick="quit()"/>
+
+
 
 <p id="message">&nbsp;</p>
 <!--<p id="message1">&nbsp;</p>-->
 <p>
 <font size="+3"><span id="answer">puzzle loading..</span></font>
 </p>
+
 
 
 
