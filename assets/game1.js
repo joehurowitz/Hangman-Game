@@ -8,13 +8,15 @@ var answerArray = [];
 document.onkeyup = function(event){
 	var letter = String.fromCharCode(event.keyCode).toLowerCase();
 
-	if (letter === "i"){
+	if (letter === "SP"){
 		init();
 	}
-
-	//if (letter === "g"){
+	else if (letter !== "SP"){
+		showThisMessage = "Please press spacebar to initialize";
+	}
+	
 		guessOne();
-	//}
+	
 } //close event
 
 function init(){
@@ -35,7 +37,7 @@ function guessOne(){
 	var guess = event.key;
 	var showThisMessage = "";
 	var lettersAlreadyGuessed =[];
-	showThisMessage = "Enter a letter : "
+	showThisMessage = "Please enter another letter : ";
 	if(guess.length !==1){
 		showThisMessage = "Please enter only one letter";
 	}
