@@ -3,7 +3,8 @@
  <head>
     <meta charset="UTF-8">
     <title>Hangman</title>
-    <!--<link rel="stylesheet" type="text/css" href="assets/style1.css">-->
+    <link rel="stylesheet" type="text/css" href="../assets/style1.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script type="text/javascript" src="assets/game1.js"></script>
    
 
@@ -12,27 +13,47 @@
 	<body style="background-color: rgba(137, 206, 186, 0.6); ">
 
 
-<!--<input id="guess" type="text">-->
-
-<!--Press "i" to initialize: -->
-<input type="button" value="Initialize" onClick="init()"/>
-
-
-
- <input type="text" onkeyup="guessOne()"/>
-<input type="button" value="Quit" onClick="quit()"/>
+		<div style="text-align: center;" class="jumbotron">
+		  <h1>Hangman</h1>
+		  <p>Lets start the game!</p>
+		  
+		</div>
 
 
 
-<p id="message">&nbsp;</p>
-<!--<p id="message1">&nbsp;</p>-->
-<p>
-<font size="+3"><span id="answer">puzzle loading..</span></font>
-</p>
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div style="text-align: center; margin-top :30px;"  class="col-md-6">
+
+				<input class="btn btn-default" type="button" value="Play!" onClick= "init()"/>
+
+			</div>
+			<div style="text-align: center; margin-top: 30px;" class="col-md-6">
+				
+				<input  style="text-align: center;"  id="text-box"  type="text" class="form-control" onkeyup= "guessOne()"/>
+
+				</div>
+		</div>
+
+	    <div class="row">
+				<div style="text-align: center; margin-top: 30px;" class="col-md-6">
+
+				<input class="btn btn-default" type="button" value="Quit" onClick= "quit()"/>
+			
+				</div>
+				<div style="text-align: center; margin-top: 30px;" class="col-md-6">
+
+				<p id="message">&nbsp;</p>
+
+				<p>
+				<font size="+3"><span id="answer">puzzle loading..</span></font>
+				</p>
+			</div>
 
 
-
-
+		</div>
+	</div> 
 
 	</body>
 
